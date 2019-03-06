@@ -11,7 +11,7 @@ module.exports = merge(baseWebpackConfig, {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'public/index.html',
+            template: 'index.html',
             inject: 'body',
             minify: {
                 html5: true
@@ -22,13 +22,18 @@ module.exports = merge(baseWebpackConfig, {
     ],
     devServer: {
         port: '8080',
-        contentBase: path.join(__dirname, '../public'),
+        contentBase: path.join(__dirname, '../'),
         compress: true,
         historyApiFallback: true,
         hot: true,
         https: false,
         noInfo: true,
         open: true,
-        proxy: {}
+        proxy: {
+		        '/api': {
+				        target: 'http://localhost:8080',
+				        pathRewrite: {'^/api' : ''}
+		        }
+        }
     },
 });

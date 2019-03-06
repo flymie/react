@@ -10,7 +10,7 @@ module.exports = merge(baseWebpackConfig,{
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'public/index.html',
+            template: 'index.html',
             inject: 'body',
             minify: {
                 removeComments: true,

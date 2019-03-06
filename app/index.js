@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDom from "react-dom";
-import style from '../public/index.less';
+import '../static/css/index.less';
+import Container from "./component/home/view";
 
 ReactDom.render(
-    <div className='a'>
-        <h1 className='a_b'>hello, world!</h1>
-        <p className='background'>test speed</p>
-        <img src={require('Images/userImg240.png')} />
-    </div>,
+		<div>
+        <Container />
+		</div>,
     document.getElementById("root")
 );
