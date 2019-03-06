@@ -1,7 +1,7 @@
 const path = require('path');
 const APP_PATH = path.resolve(__dirname,'../app');
 const DIST_PATH = path.resolve(__dirname, '../dist');
-const Images = path.resolve(__dirname, '../public/images');
+
 module.exports = {
     entry: {
         app: './app/index.js',
@@ -14,7 +14,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js?$/,
+                test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
@@ -94,7 +94,8 @@ module.exports = {
     },
     resolve:{
         alias: {
-            Images: Images,
-        }
+            Images: path.resolve(__dirname, '../static/images'),
+        },
+		    extensions: ['.js', '.jsx', 'css', '.json'],
     }
 };
