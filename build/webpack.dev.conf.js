@@ -8,10 +8,11 @@ module.exports = merge(baseWebpackConfig, {
   mode: 'development',
   output: {
     filename: 'js/[name].[hash:16].js',
+    publicPath: '/',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: './index.html',
       inject: 'body',
       minify: {
         html5: true,
@@ -19,13 +20,15 @@ module.exports = merge(baseWebpackConfig, {
       hash: false,
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   devServer: {
     port: '1234',
     contentBase: path.join(__dirname, '../'),
     compress: true,
     historyApiFallback: true,
-    hot: true,
+    hot: true, // 启动webpack热模块替换特性
+    inline: true, // 自动刷新
     https: false,
     noInfo: true,
     open: true,

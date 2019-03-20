@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
-import routerV4 from '../routerV4/view';
+import { Link } from 'react-router-dom';
 
 class Container extends React.Component {
   componentDidMount() {
@@ -24,7 +23,7 @@ class Container extends React.Component {
             <p key={`${index + 1}`}>{v}</p>
           ))
         }
-        <Link to="/routerV4/1">传入param,query</Link>
+        <Link to={`/routerV4/1?a=${encodeURIComponent('4&&-.2')}&b=${encodeURIComponent('5=&')}`}>传入param,query</Link>
       </div>
     );
   }

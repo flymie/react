@@ -84,7 +84,7 @@ module.exports = {
         use: [{
           loader: 'url-loader',
           options: {
-            publicPath: './',
+            publicPath: '/',
             name: '[path][name].[ext]',
             limit: 500, // 是把小于500B的文件打成Base64的格式，写入JS
           },
@@ -96,6 +96,7 @@ module.exports = {
   resolve: {
     alias: {
       Images: path.resolve(__dirname, '../static/images'),
+      appPath: APP_PATH,
     },
     extensions: ['.js', '.jsx', 'css', '.json'],
   },

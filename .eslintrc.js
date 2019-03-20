@@ -28,7 +28,8 @@ module.exports ={
         "no-param-reassign": "off",
         "react/require-default-props": "off",
         "global-require": 0,
-        "import/no-extraneous-dependencies": ["error", { devDependencies: true }]
+        "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+        "import/no-unresolved": "off"
     },
     "settings": {
         "import/resolver": {

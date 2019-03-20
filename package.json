@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "build": "webpack --config build/webpack.prod.conf.js",
+    "dev": "webpack-dev-server --inline --config build/webpack.dev.conf.js",
+    "build": "webpack --progress --config build/webpack.prod.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router-dom": "^4.3.1"

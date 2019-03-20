@@ -1,5 +1,5 @@
 // 把图片转化为base64
-function convertImgToBase64(url, callback, outputFormat = 'image/png') {
+export const convertImgToBase64 = (url, callback, outputFormat = 'image/png') => {
   let canvas = document.createElement('CANVAS');
   const ctx = canvas.getContext('2d');
   const image = new Image();
@@ -13,4 +13,21 @@ function convertImgToBase64(url, callback, outputFormat = 'image/png') {
     canvas = null;
   };
   image.src = url;
+};
+
+// 从url的search拿字段
+export const searchToYouWantFn = (str) => {
+  const queryObj = {};
+  const searchStr = str.match(new RegExp('\\?(.*)'))[1];
+  const reg = /([^=&]+)=([^&]*)/g;
+  const querys = searchStr.match(reg);
+  if (querys) {
+    querys.forEach((v) => {
+      const query = v.match(new RegExp('([^=]*)=(.*)'));
+      const key = query[1];
+      const value = query[2].replace(/(^")|("$)/g, '');
+      queryObj[key] = decodeURIComponent(value);
+    });
+  }
+  return queryObj;
 };
