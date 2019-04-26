@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import '../static/css/index.less';
 import routes from './routes/index';
+import '../static/css/index.less';
+
 
 ReactDom.render(
   <BrowserRouter>

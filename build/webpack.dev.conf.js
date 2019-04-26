@@ -34,7 +34,9 @@ module.exports = merge(baseWebpackConfig, {
     open: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:1234',
+        secure: false,
+        changeOrigin: true,
+        target: 'https://api.douban.com',
         pathRewrite: { '^/api': '' },
       },
     },
