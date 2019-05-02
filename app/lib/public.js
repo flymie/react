@@ -1,3 +1,12 @@
+// 用于生成 action creator 的函数
+export const makeActionCreator = (type, ...argNames) => function (...args) {
+  const action = { type };
+  argNames.forEach((arg, index) => {
+    action[argNames[index]] = args[index];
+  });
+  return action;
+};
+
 // 把图片转化为base64
 export const convertImgToBase64 = (url, callback, outputFormat = 'image/png') => {
   let canvas = document.createElement('CANVAS');

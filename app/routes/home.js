@@ -1,4 +1,5 @@
-import Container from '../component/home/view';
+import Container from '../component/home/list/view';
+import List2 from '../component/home/list2/view';
 
 const home = [
   {
@@ -6,7 +7,11 @@ const home = [
     path: '/',
     component: Container,
   },
-
+  {
+    exact: true,
+    path: '/home/list2',
+    component: List2,
+  },
 ];
 
 export default home;
