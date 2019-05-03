@@ -1,0 +1,52 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { increaseAction } from './action';
+
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+  }
+
+  componentDidUpdate() {
+  }
+
+  componentWillUnmount() {
+  }
+
+  render() {
+    const { value, dispatch } = this.props;
+    return (
+      <div className="a">
+        <div>
+          <span>{value}</span>
+          <button
+            onClick={() => {
+              dispatch(increaseAction({
+                q: 'k',
+              }));
+            }}
+          >
+            getMusic
+          </button>
+        </div>
+        <h1 className="a_b">homeList2</h1>
+      </div>
+    );
+  }
+}
+
+Container.propTypes = {
+  value: PropTypes.number.isRequired,
+  // onIncreaseClick: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => Object.assign({}, state.homeList);
+export default connect(
+  mapStateToProps,
+  // mapDispatchToProps,
+)(Container);
