@@ -40,3 +40,34 @@ export const searchToYouWantFn = (str) => {
   }
   return queryObj;
 };
+
+export const filterEmptyProp = (obj) => {
+  if (typeof obj !== 'object') return obj;
+  const result = {};
+  const keys = Object.keys(obj);
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i];
+    if (obj[key] !== '') {
+      result[key] = filterEmptyProp(obj[key]);
+    }
+  }
+  return result;
+};
+
+/**
+ * 这是工作用于fetch post文件下载文件的方式。
+ */
+// * downloadTemplate(action) {
+//   const res = yield downloadTemplateApi(action.props);
+//   res.blob().then((blob) => {
+//     const elink = document.createElement('a');
+//     elink.style.display = 'none';
+//     elink.href = window.URL.createObjectURL(blob);
+//     document.body.appendChild(elink);
+//     const fileName = res.headers.get('Content-Disposition');
+//     elink.download = fileName;
+//     elink.click();
+//     window.URL.revokeObjectURL(elink.href);
+//     document.body.removeChild(elink);
+//   });
+// };
