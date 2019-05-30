@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --config build/webpack.dev.conf.js",
     "build": "webpack --progress --config build/webpack.prod.conf.js",
+    "server": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -54,6 +55,9 @@
     "react-redux": "^7.0.2",
     "react-router-dom": "^4.4.0-beta.6",
     "redux": "^4.0.1",
-    "redux-saga": "^1.0.2"
+    "redux-saga": "^1.0.2",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
   }
 }
