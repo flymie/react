@@ -29,7 +29,8 @@ module.exports ={
         "react/require-default-props": "off",
         "global-require": 0,
         "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        'react/jsx-one-expression-per-line': 'off'
     },
     "settings": {
         "import/resolver": {
