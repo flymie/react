@@ -50,13 +50,6 @@ module.exports = {
           { loader: 'less-loader' },
           {
             loader: 'postcss-loader', // 自动加前缀
-            options: {
-              plugins: [
-                require('autoprefixer')({
-                  overrideBrowserslist: ['last 5 version'],
-                }),
-              ],
-            },
           },
 
         ],
