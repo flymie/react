@@ -8,13 +8,14 @@ module.exports = merge(baseWebpackConfig, {
   mode: 'production',
   output: {
     filename: 'js/[name].[chunkhash:16].js',
+    publicPath: '.',
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: 'body',
       minify: {
-        removeComments: true,
+        removeComments: false,
         collapseWhitespace: true,
         removeAttributeQuotes: true,
       },

@@ -35,7 +35,7 @@ module.exports = {
             options: {
               plugins: [
                 require('autoprefixer')({
-                  browsers: ['last 5 version'],
+                  overrideBrowserslist: ['last 5 version'],
                 }),
               ],
             },
@@ -53,7 +53,7 @@ module.exports = {
             options: {
               plugins: [
                 require('autoprefixer')({
-                  browsers: ['last 5 version'],
+                  overrideBrowserslist: ['last 5 version'],
                 }),
               ],
             },
@@ -72,7 +72,7 @@ module.exports = {
             options: {
               plugins: [
                 require('autoprefixer')({
-                  browsers: ['last 5 version'],
+                  overrideBrowserslist: ['last 5 version'],
                 }),
               ],
             },

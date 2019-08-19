@@ -1,5 +1,5 @@
-import $api from 'appPath/config/http';
 import { takeLatest, put } from 'redux-saga/effects';
+import $api from '../../../config/http';
 import * as types from './type';
 import { changeData } from './action';
 

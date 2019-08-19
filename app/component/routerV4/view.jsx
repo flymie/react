@@ -1,6 +1,6 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import { searchToYouWantFn } from 'appPath/lib/public';
+import { searchToYouWantFn } from '../../lib/public';
 
 class RouterV4 extends React.Component {
   componentDidMount() {

@@ -1,4 +1,4 @@
-import { makeActionCreator } from 'appPath/lib/public';
+import { makeActionCreator } from '../../../lib/public';
 import * as types from './type';
 
 export const changeData = makeActionCreator(types.changeData, 'data');

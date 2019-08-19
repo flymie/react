@@ -1,12 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { increaseAction } from './action';
+import { increaseAction, init } from './action';
 
 class Container extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  static asyncData(store) {
+    store.dispatch(init({
+      q: 'k',
+    }));
+  };
 
   componentDidMount() {
   }

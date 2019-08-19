@@ -17,12 +17,20 @@ const controller = () => {
       if (url.startsWith('GET ')) {
         // 如果url类似"GET xxx":
         const pathUrl = url.substring(4);
-        router.get(pathUrl, mapping[url]);
+        // router.get(pathUrl, mapping[url]);
+        router.get(pathUrl, (ctx, next) => {
+          ctx.render(mapping[url]);
+          next();
+        });
         console.log(`register URL mapping: GET ${pathUrl}`);
       } else if (url.startsWith('POST ')) {
         // 如果url类似"POST xxx":
         const pathUrl = url.substring(5);
-        router.post(pathUrl, mapping[url]);
+        // router.post(pathUrl, mapping[url]);
+        router.post(pathUrl, (ctx, next) => {
+          ctx.render(mapping[url]);
+          next();
+        });
         console.log(`register URL mapping: POST ${pathUrl}`);
       } else {
         // 无效的URL:

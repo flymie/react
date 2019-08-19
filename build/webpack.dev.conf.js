@@ -7,7 +7,7 @@ const baseWebpackConfig = require('./webpack.base.conf.js');
 module.exports = merge(baseWebpackConfig, {
   mode: 'development',
   output: {
-    filename: 'js/[name].[hash:16].js',
+    filename: 'js/[name].js',
     publicPath: '/',
   },
   plugins: [
