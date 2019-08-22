@@ -4,7 +4,7 @@ import homeList2 from '../component/home/list2/view';
 const home = [
   {
     exact: true,
-    path: '/',
+    path: '/home',
     component: Container,
   },
   {
@@ -13,5 +13,4 @@ const home = [
     component: homeList2,
   },
 ];
-
 export default home;

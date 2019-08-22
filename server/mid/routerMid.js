@@ -11,7 +11,7 @@ import store from '../../app/createStore';
 
 // 匹配模板中的{{}}
 function templating(props) {
-  console.log(path.join(__dirname, '../../dist/index.html'));
+  // console.log(path.join(__dirname, '../../dist/index.html'));
   const template = fs.readFileSync(path.join(__dirname, '../../dist/index.html'), 'utf-8');
   // const template = fs.readFileSync(path.join(__dirname, '../template/index.html'), 'utf-8');
   // src=./js
@@ -20,7 +20,6 @@ function templating(props) {
   ));
 }
 const homeFn = async (ctx, next) => {
-  // console.log(ctx);
   try {
     ctx.render = () => {
       const html = renderToString(

@@ -2,6 +2,7 @@ import * as types from './type';
 
 const defaultState = {
   value: 0,
+  q: 'k',
 };
 const home = (state = defaultState, action) => {
   switch (action.type) {
