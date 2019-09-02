@@ -27,5 +27,6 @@ const composedEnhancers = compose(
 );
 
 const store = createStore(rootReducer, defaultStore, composedEnhancers);
-sagaMiddleware.run(rootSaga);
+const task = sagaMiddleware.run(rootSaga);
+export { task };
 export default store;

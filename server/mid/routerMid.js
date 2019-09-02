@@ -4,10 +4,9 @@ import React from 'react';
 import fs from 'fs';
 import path from 'path';
 import { Provider } from 'react-redux';
-// import { renderRoutes, matchRoutes } from 'react-router-config';
 import routes from '../../app/routes/index';
 
-import store from '../../app/createStore';
+// import store from '../../app/createStore';
 
 // 匹配模板中的{{}}
 function templating(props) {
@@ -21,7 +20,7 @@ function templating(props) {
 }
 const homeFn = async (ctx, next) => {
   try {
-    ctx.render = () => {
+    ctx.render = async (store) => {
       const html = renderToString(
         <Provider store={store}>
           <StaticRouter location={ctx.url}>

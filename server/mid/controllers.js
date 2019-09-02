@@ -18,9 +18,12 @@ const controller = () => {
         // 如果url类似"GET xxx":
         const pathUrl = url.substring(4);
         // router.get(pathUrl, mapping[url]);
-        router.get(pathUrl, (ctx, next) => {
-          ctx.render(mapping[url]);
-          next();
+        router.get(pathUrl, async (ctx, next) => {
+          await mapping[url](ctx).then((data) => {
+            console.log(data.getState())
+            ctx.render(data);
+            next();
+          });
         });
         console.log(`register URL mapping: GET ${pathUrl}`);
       } else if (url.startsWith('POST ')) {
