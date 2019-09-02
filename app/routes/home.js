@@ -9,7 +9,7 @@ const home = [
   },
   {
     exact: true,
-    path: '/home/list2',
+    path: '/home/list2/:a',
     component: homeList2,
   },
 ];

@@ -8,11 +8,11 @@ class Container extends React.Component {
     super(props);
   }
 
-  static asyncData(store) {
+  static asyncData(store, ctx) {
     store.dispatch(init({
-      q: 'k',
+      q: ctx.params.a,
     }));
-  };
+  }
 
   componentDidMount() {
   }
