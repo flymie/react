@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --config build/webpack.dev.conf.js",
     "build": "webpack --progress --config build/webpack.prod.conf.js",
-    "server": "node server/index.js",
+    "forSSR": "webpack --config build/webpack.server.conf.js",
+    "server": "node ./server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

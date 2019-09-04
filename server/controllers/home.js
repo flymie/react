@@ -1,9 +1,14 @@
-import routes from '../../app/routes/index';
-import store from '../../app/createStore';
+// import routes from '../../app/routes/index';
+// import store from '../../app/createStore';
+import { matchRoutes } from 'react-router-config';
+
+const { store, router } = require('../forSSr').default;
 
 const homeList2 = (ctx) => {
-  console.log(ctx.params.a);
-  routes.find(v => v.path === '/home/list2').component.WrappedComponent.asyncData(store, ctx);
+  console.log(ctx.params.a, ctx.url);
+  // const branch = matchRoutes(router, ctx.url);
+  console.log(router)
+  router.find(v => v.path === '/home/list2/:a').component.WrappedComponent.asyncData(store, ctx);
   // store.subscribe(async () => {
   //   ctx.render(store);
   // });

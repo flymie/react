@@ -6,9 +6,9 @@ const nodeExternals = require('webpack-node-externals');
 module.exports = merge({
   target: 'node',
   mode: 'development',
-  entry: path.resolve(__dirname, '../server/app.js'),
+  entry: path.resolve(__dirname, '../app/forSSr.js'),
   output: {
-    filename: 'app.[chunkhash:16].js',
+    filename: 'forSSr.js',
     libraryTarget: 'commonjs2',
     path: path.resolve(__dirname, '../server'),
   },
@@ -26,4 +26,18 @@ module.exports = merge({
       },
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', 'css', '.json'],
+  },
 });

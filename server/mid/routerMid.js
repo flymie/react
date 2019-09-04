@@ -4,8 +4,8 @@ import React from 'react';
 import fs from 'fs';
 import path from 'path';
 import { Provider } from 'react-redux';
-import routes from '../../app/routes/index';
-
+// import routes from '../../app/routes/index';
+const { router } = require('../forSSr').default;
 // import store from '../../app/createStore';
 
 // 匹配模板中的{{}}
@@ -27,14 +27,15 @@ const homeFn = async (ctx, next) => {
             {/* { renderRoutes(routes) } */}
             <Switch>
               {
-             routes.map((v, index) => (
-               <Route
-                 key={`${index + 1}`}
-                 path={v.path}
-                 exact={v.exact}
-                 component={v.component}
-               />
-             ))
+                // router
+                router.map((v, index) => (
+                  <Route
+                    key={`${index + 1}`}
+                    path={v.path}
+                    exact={v.exact}
+                    component={v.component}
+                  />
+                ))
              }
             </Switch>
           </StaticRouter>
