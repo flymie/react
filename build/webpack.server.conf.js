@@ -2,10 +2,11 @@ const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = merge({
   target: 'node',
-  mode: 'development',
+  mode: 'production',
   entry: path.resolve(__dirname, '../app/forSSr.js'),
   output: {
     filename: 'forSSr.js',
@@ -25,6 +26,7 @@ module.exports = merge({
         },
       },
     }),
+    new CleanWebpackPlugin(['../server/forSSR.js'], { allowExternal: true }),
   ],
   module: {
     rules: [
