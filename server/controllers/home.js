@@ -1,6 +1,6 @@
 // import routes from '../../app/routes/index';
 // import store from '../../app/createStore';
-import { matchRoutes } from 'react-router-config';
+// import { matchRoutes } from 'react-router-config';
 
 const { store, router } = require('../forSSr').default;
 
