@@ -1,0 +1,3 @@
+FROM nginx
+
+EXPOSE 1234

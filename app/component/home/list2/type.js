@@ -1,2 +1,2 @@
-export const changeData = 'CHANGEDATA';
-export const increase = 'INCREASE';
+export const changeData = Symbol('CHANGEDATA');
+export const increase = Symbol('INCREASE');
