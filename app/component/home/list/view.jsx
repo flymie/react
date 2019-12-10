@@ -23,6 +23,7 @@ class Container extends React.Component {
     const { value, dispatch } = this.props;
     return (
       <div className="a">
+        test
         <div>
           <span>{value}</span>
           <button
