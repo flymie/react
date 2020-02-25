@@ -2,6 +2,7 @@ import Context from '../component/learn/context/view';
 import Ref from '../component/learn/ref/view';
 import Protals from '../component/learn/protals/view';
 import RenderProp from '../component/learn/renderProp/view';
+import Aop from '../component/learn/aop/view';
 
 const learn = [
   {
@@ -23,6 +24,11 @@ const learn = [
     exact: true,
     path: '/renderProp',
     component: RenderProp,
+  },
+  {
+    exact: true,
+    path: '/aop',
+    component: Aop,
   },
 ];
 
