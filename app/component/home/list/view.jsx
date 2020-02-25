@@ -23,6 +23,14 @@ class Container extends React.Component {
     const { value, dispatch } = this.props;
     return (
       <div className="a">
+        <fieldset>
+          <legend>试一下less</legend>
+          <div className="lessContain">
+            <div className="lessContainCenter">
+              123
+            </div>
+          </div>
+        </fieldset>
         <div>
           <span>{value}</span>
           <button
