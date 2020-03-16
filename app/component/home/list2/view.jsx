@@ -45,7 +45,7 @@ Container.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => Object.assign({}, state.homeList);
+const mapStateToProps = state => Object.assign({}, state.homeList2);
 export default connect(
   mapStateToProps,
   // mapDispatchToProps,
