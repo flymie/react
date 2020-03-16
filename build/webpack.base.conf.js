@@ -47,7 +47,6 @@ module.exports = {
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },
-          { loader: 'less-loader' },
           {
             loader: 'postcss-loader', // 自动加前缀
             options: {
@@ -58,7 +57,7 @@ module.exports = {
               ],
             },
           },
-
+          { loader: 'less-loader' },
         ],
       },
       {
@@ -66,7 +65,6 @@ module.exports = {
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },
-          { loader: 'sass-loader' },
           {
             loader: 'postcss-loader',
             options: {
@@ -77,6 +75,7 @@ module.exports = {
               ],
             },
           },
+          { loader: 'sass-loader' },
         ],
       },
       {
