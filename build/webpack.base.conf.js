@@ -15,6 +15,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'ts-loader',
+        },
+        include: [
+          path.resolve(__dirname, 'app/component/typescript'),
+        ],
+      },
+      {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
@@ -97,6 +107,6 @@ module.exports = {
       Images: path.resolve(__dirname, '../static/images'),
       appPath: APP_PATH,
     },
-    extensions: ['.js', '.jsx', 'css', '.json'],
+    extensions: ['.js', 'tsx', '.jsx', 'css', '.json'],
   },
 };
