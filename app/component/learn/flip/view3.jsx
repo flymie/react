@@ -63,11 +63,16 @@ export default class Card extends React.Component {
     } else if (animateStatus === 2) {
       // Play
       // 重置
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         this.setState(() => ({
           animateStatus: 3,
         }));
-      }, 0);
+      });
+      // setTimeout(() => {
+      //   this.setState(() => ({
+      //     animateStatus: 3,
+      //   }));
+      // }, 0);
     }
   }
 
