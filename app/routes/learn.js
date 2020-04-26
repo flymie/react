@@ -3,6 +3,7 @@ import Ref from '../component/learn/ref/view';
 import Protals from '../component/learn/protals/view';
 import RenderProp from '../component/learn/renderProp/view';
 import Sku from '../component/learn/sku/view';
+import Flip from '../component/learn/flip/view';
 
 const learn = [
   {
@@ -29,6 +30,11 @@ const learn = [
     exact: true,
     path: '/sku',
     component: Sku,
+  },
+  {
+    exact: true,
+    path: '/flip',
+    component: Flip,
   },
 ];
 
